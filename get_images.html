@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>ストリートビューの画像を取得</title>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?&sensor=FALSE">
+<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?&sensor=FALSE&key="> -->
+</script>
+
+<style>
+  html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+  }
+</style>
+
+</head>
+
+<script>
+window.onload = function(){
+  initialize();
+}
+</script>
+
+<body>
+
+<div>
+<input type="text" id="start" size="30" value="東京駅">
+<input type="text" id="end" size="30" value="有楽町駅">
+<input type="button" value="ルート取得" onClick="calcRoute();">
+</div>
+
+<div>
+<input type="text" id="lat" size="30" value="35.681382">
+<input type="text" id="lon" size="30" value="139.766084">
+<input type="text" id="heading" size="30" value="0">
+<input type="button" value="heading" onClick="getStreetView();">
+</div>
+
+<div id="map-canvas" style="width: 400px; height: 300px"></div>
+<div id="pano" style="position:absolute; left:410px; top: 8px; width: 400px; height: 300px;"></div>
+
+<p>r1<div id="r1"></div></p>
+<p>r2<div id="r2"></div></p>
+<p>r3<div id="r3"></div></p>
+
+<script src="js/get_images.js"></script>
+
+</body>
+</html>
